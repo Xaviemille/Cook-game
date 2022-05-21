@@ -10,8 +10,8 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Dinnerdash")
 #Giving a window title
 
-class Cook(pygame.sprite.Sprite):
-    def _init_(self, x, y, scale):
+class Player(pygame.sprite.Sprite):
+    def __init__(self, x, y, scale):
         pygame.sprite.Sprite. __init__(self)
         img = pygame.image.load(r'image\cook.png')
         self.image = pygame.transform.scale(img, (int(img.get_width()* scale), int(img.get_height()* scale)))
@@ -23,7 +23,7 @@ class Cook(pygame.sprite.Sprite):
           screen.blit(self.image, self.rect)
 #To keep the code running, we have to  use a while loop
 
-cook = Cook(200, 300, 0.03)
+cook = Player(200, 300, 0.03)
 #Coordinates where I want to draw the player
 
 
